@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta charset="utf-8"/>
+<!--Name: Michael Hammond;
+  File Name: Portfolio.html;
+-->
+<style>
+.answer
+{
+    display: none;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<div id = "rules">
+
+    </div>
+<p id = "Text" ></p>
+<body>
+<script>
+
+ 
+    var allTextLines = 
+[
+    "<h1>How To Edit Ada Code in Visual Studio Code: The Right Way!</h1>",
+    "First, some assumptions have to be made:",
+    "<ul><li>You have Visual Studio Code installed (duh)</li><li>You have GNAT, the Closed-Source Ada implementation, installed on your computer</li><li>The gnatmake binary is linked to your OS's PATH variables.</li><li>You really hate all of the current Ada options, and want something more mainstream and recent to use for your Ada code without sacrificing features such as code snippets.</li><ul>",
+    "To begin, start up Visual Studio, go to the extensions page (on the Left bar) The Extensions tab can be reached from the button containing the icon with four blocks and the top-right corner is seperated from what would be a complete cube.",
+    "Install the plugins named 'Ada' and 'Ada-snippets', both by the user Entomy",
+    "Once those are installed, reload Visual Studio Code, load an Ada file, and you should see that your Code has syntax highlighting.",
+    "Next, we want to install from the extensions page an extension called 'code-runner', but we're going to modify it. Once installed, reload Visual Studio Code and disable the plugin.",
+    "We want to modify the extension's package.json file, which has the file extensions to use. We want to do this because Ada is not officially supported in this plugin.",
+    "User extension paths for Visual Studio Code can be found <a href='https://code.visualstudio.com/docs/editor/extension-gallery'>at the bottom of this link</a>.",
+    "Inside the extension path is all of the extensions you have installed. Inside the extension with code-snippets in its name (you have to find it, sorry) is the package.json we want to modify. Open it in Visual Studio Code (or any editor, just remember to save).",
+    "Find the line: ' \"code-runner.executorMapByFileExtension\": '  Inside this part of the JSON file are compilations by file extension. Go to the bottom of this file, find the last extension, add just a comma at the end of the last double quote mark, and hit enter.",
+    "Now add the following code at the new line you just created: 						\".adb\": \"cd $dir && gnatmake $fileName && $dir$fileNameWithoutExt\"",
+];
+var lines = [];
+$(document).ready(function() {
+    parseDataIntoHTML();
+});
+function parseDataIntoHTML()
+{
+    var headers = allTextLines;
+    var toInnerHTML = "";
+    for (var i=0; i<allTextLines.length; i++) {
+        var line = allTextLines[i];
+        toInnerHTML = toInnerHTML.concat("<div class='Contents' id='Contents'>".concat(line).concat("</div><br>"));
+    }
+    //alert(toInnerHTML);
+    document.getElementById("Text").innerHTML = toInnerHTML;
+}
+function printArticle()
+{
+    window.print();
+}
+</script>
+<button onclick="printArticle()">Print Article</button>            
+</body>
+</html> 
