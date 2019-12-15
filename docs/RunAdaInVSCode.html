@@ -36,7 +36,8 @@
     "Inside the extension path is all of the extensions you have installed. Inside the extension with code-snippets in its name (you have to find it, sorry) is the package.json we want to modify. Open it in Visual Studio Code (or any editor, just remember to save).",
     "Find the line: ' \"code-runner.executorMapByFileExtension\": '  Inside this part of the JSON file are compilations by file extension. Go to the bottom of this section, find the last extension in this listing, only add one comma at the end of the last double quote mark, and hit enter.",
     "Now add the following code at the new line you just created: <br><br> \".adb\": \"cd $dir && gnatmake $fileName && $dir$fileNameWithoutExt\"",
-    "And that's it! Keep in mind that you'll have to compile the root .adb file of your project for some Ada functionality to work.",
+    "Now reload VS Code and re-enable the extension. You'll also very likely want to turn on the checkbox for 'Run in Terminal' in the code-snippets settings.", 
+    "And that's it! Keep in mind that you'll have to compile the root .adb file of your project for some Ada functionality to work."
 ];
 var lines = [];
 $(document).ready(function() {
