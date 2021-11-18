@@ -78,9 +78,9 @@
             ["How to install Cisco AnyConnect VPN on Arch-Linux Distributions using the Tarball","https://archived.forum.manjaro.org/t/howto-install-the-official-cisco-anyconnect-vpn-client-tarball-using-the-aur-updated/96369"]
             ];
             let x = document.getElementsByClassName('tutorials');
-            alert(csvdata[0][1]);
             for (i = 0; i < x.length; i++) { 
                 if (x[i].innerHTML.toLowerCase() === csvdata[i][0].toLowerCase()) {
+                    alert(i);
                     x[i].href = csvdata[i][0];
                 }          
             }
