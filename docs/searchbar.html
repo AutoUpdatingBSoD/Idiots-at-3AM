@@ -80,7 +80,7 @@
             ];
             let x = document.getElementsByClassName('tutorials');
             for (i = 0; i < x.length; i++) { 
-                if (x[i].innerText.toLowerCase() == csvdata[i][0].toLowerCase()) {
+                if (x[i].innerText == csvdata[i][0]) {
                     alert(i);
                     x[i].href = csvdata[i][1];
                 }          
