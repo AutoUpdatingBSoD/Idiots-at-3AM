@@ -1,8 +1,35 @@
 <!DOCTYPE html>
 <head>
     <style>
-      </style>
+        #searchbar{
+    margin-left: 15%;
+    padding:15px;
+    border-radius: 10px;
+  }
 
+  input[type=text] {
+     width: 30%;
+     -webkit-transition: width 0.15s ease-in-out;
+     transition: width 0.15s ease-in-out;
+  }
+
+  /* When the input field gets focus,
+       change its width to 100% */
+  input[type=text]:focus {
+    width: 70%;
+  }
+
+ #list{
+   font-size:  1.5em;
+   margin-left: 90px;
+  }
+
+.tutorials{
+  display: list-item;    
+ } 
+      </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
     </head>
   <body>
     <!-- Hero content: will be in the middle -->
@@ -12,7 +39,7 @@
         <!-- input tag -->
         <input id="searchbar" onkeyup="search_tutorial()" type="text"
             name="search" placeholder="Search tutorials..">
-            <script src="search.js"></script>
+
             <link rel="stylesheet" href="search.css">
           
         <!-- ordered list -->
@@ -28,3 +55,35 @@
     </body>
     </html>
     <script>
+    function search_tutorial() {
+        let input = document.getElementById('searchbar').value
+        input=input.toLowerCase();
+        let x = document.getElementsByClassName('tutorials');
+          
+        for (i = 0; i < x.length; i++) { 
+            if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                x[i].style.display="none";
+            }
+            else {
+                x[i].style.display="list-item";                 
+            }
+        }
+    }
+    $(document).ready(function() {
+            
+            $.ajax({
+              type: "GET",  
+              url: "associations.csv",
+              dataType: "text",       
+              success: function(response)  
+              {
+                  alert(csv[0][1]);
+                var csvdata = $.csv.toArrays(response);
+                    for (i = 0; i < x.length; i++) { 
+                        if (x[i].innerHTML.toLowerCase() === csvdata[i][0].toLowerCase()) {
+                            x[i].href = csvdata[i][0];
+                }   
+                }
+            }
+            });
+        });</script>
