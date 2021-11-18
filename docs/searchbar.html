@@ -79,9 +79,10 @@
             ];
             let x = document.getElementsByClassName('tutorials');
             for (i = 0; i < x.length; i++) { 
-                if (x[i].innerHTML.toLowerCase() === csvdata[i][0].toLowerCase()) {
-                    alert(i);
-                    x[i].href = csvdata[i][0];
+                alert(csvdata[i][0]);
+                //if (x[i].innerHTML.toLowerCase() === csvdata[i][0].toLowerCase()) {
+                //    alert(i);
+                //    x[i].href = csvdata[i][1];
                 }          
             }
         });</script>
