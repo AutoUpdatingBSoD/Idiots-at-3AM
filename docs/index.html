@@ -1,52 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 
-<meta charset="utf-8"/>
-<!--Name: Michael Hammond;
-  File Name: Portfolio.html;
--->
-<style>
-.answer
-{
-    display: none;
-}
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Idiots at 3AM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
+
 </head>
-<div id = "rules">
-
-    </div>
-    <h1>All Guides</h1>
-<p id = "Text" ></p>
 <body>
+ <!-- Hero content: will be in the middle -->
+        <div id="searchBarDiv"></div>
+        
 <script>
-
- 
-    var allTextLines = 
-[
-    ["RunAdaInVSCode.html","How To Edit Ada Code in Visual Studio Code: The Right Way!"]
-];
-var lines = [];
-$(document).ready(function() {
-    parseDataIntoHTML();
-});
-function parseDataIntoHTML()
-{
-    var headers = allTextLines;
-    var toInnerHTML = "";
-    for (var i=0; i<allTextLines.length; i++) {
-        var line = allTextLines[i];
-        toInnerHTML = toInnerHTML.concat("<a href='".concat(line[0]).concat("'>").concat(line[1]).concat("</a><br><br>"));
-    }
-    //alert(toInnerHTML);
-    document.getElementById("Text").innerHTML = toInnerHTML;
-}
-function printArticle()
-{
-    window.print();
-}
-</script>
-<button onclick="printArticle()">Print Article</button>            
+        $(document).ready(function () {
+            $("#searchBarDiv").load("searchbar.html");
+        });
+    </script>
 </body>
-</html> 
+
+
+</html>
+
+    
