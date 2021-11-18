@@ -79,10 +79,9 @@
         $(document).ready(function() {
             let x = document.getElementsByClassName('tutorials');
             for (i = 0; i < x.length; i++) { 
-                alert(x.length);
-                //if (x[i].innerHTML.toLowerCase() === csvdata[i][0].toLowerCase()) {
-                //    alert(i);
-                //    x[i].href = csvdata[i][1];
-                //}          
+                if (x[i].innerHTML.toLowerCase() === csvdata[i][0].toLowerCase()) {
+                    alert(i);
+                    x[i].href = csvdata[i][1];
+                }          
             }
         });</script>
