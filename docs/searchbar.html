@@ -59,7 +59,7 @@
         var csvdata = [    
             ["Edit Ada in Visual Studio: The Right Way!","RunAdaInVSCode.html"],
             ["Best Practices for Industry-Level Cyber Security","antihacked.html"],
-            ["Best Practices for Web Scraping Data off of a Web Page:","howtowebspider.html"],
+            ["Best Practices for Web Scraping Data off of a Web Page","howtowebspider.html"],
             ["How to install Cisco AnyConnect VPN on Arch-Linux Distributions using the Tarball","https://archived.forum.manjaro.org/t/howto-install-the-official-cisco-anyconnect-vpn-client-tarball-using-the-aur-updated/96369"]
             ];
         let input = document.getElementById('searchbar').value
@@ -79,7 +79,7 @@
         $(document).ready(function() {
             let x = document.getElementsByClassName('tutorials');
             for (i = 0; i < x.length; i++) { 
-                if (x[i].innerHTML.toLowerCase() === csvdata[i][0].toLowerCase()) {
+                if (x[i].innerText.toLowerCase() === csvdata[i][0].toLowerCase()) {
                     alert(i);
                     x[i].href = csvdata[i][1];
                 }          
