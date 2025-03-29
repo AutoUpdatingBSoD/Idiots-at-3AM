@@ -28,13 +28,13 @@
         <p>3/29/2025: This is another archive of a How-To post I made on <a href="https://www.reddit.com/r/ManjaroLinux/comments/iax5q2/howto_install_the_official_cisco_anyconnect_vpn/">Reddit</a>, just in case that post gets taken down too.
     </p>
         
-        <h1>How to install Cisco AnyConnect VPN on Arch Linux Distributions using the Tarball</h1>
+        <h1 class="has-text-white">How to install Cisco AnyConnect VPN on Arch Linux Distributions using the Tarball</h1>
 
         <p>
         Hello All!
         Before I begin, I'm posting this here since the Manjaro Forums (original place I posted this HowTo as I was using it 100% at the time) got destroyed in an update, as some of you already know. Thankfully, my thread got saved in the archive. However, in the event that another update process ruins the archive, I'm posting yet another backup HowTo guide here, since I'm a Reddit user now:
           </p>
-        <h2>The Actual HowTo Guide</h2>
+        <h2 class="has-text-white">The Actual HowTo Guide</h2>
         
         <p>I created a new how-to guide for a few reasons:
         </p><p><ul><li>The cisco-anyconnect-tarball changes are now merged to cisco-anyconnect, making the old guide (and the old -tarball package) useless.</li>
@@ -43,7 +43,7 @@
         </p><p><li>Since I got flag/edit permissions after I made this post, I flagged the original post, and it's now been unlisted.</li></ul>
         </p><p>For some users, there won't be an option to include a link, so I'll specify how to include the tarball locally instead.
         </p><p>With that in mind, here's the new (updated) how-to guide for the tarball:
-        </p><p><h5>CLI:</h5>
+        </p><p><h5 class="has-text-white">CLI:</h5>
         </p><p>If yay is not installed, do:
         </p><p><blockquote class="has-background-black has-text-success">sudo pacman -S yay</blockquote>
         </p><p>Then, run:
@@ -61,7 +61,7 @@
         </p><p><blockquote class="has-background-black has-text-success">if [[ "${_source}" == "tarball" ]]; then     _filename="anyconnect-linux64-${pkgver}-predeploy-k9.tar.gz"</blockquote>
         </p><p>Make sure the _filename variable is the same as your tarball. Yours may not be by default because Cisco, that's why.
         </p><p>Save the PKGBUILD, close, and complete the installation process as normal.
-        </p><p><h5>Post-install</h5>
+        </p><p><h5 class="has-text-white">Post-install</h5>
         </p><p>Finally, run the following command as root:
         </p><p><blockquote class="has-background-black has-text-success">systemctl enable --now vpnagentd</blockquote>
         </p><p>And that's all there is to it!
@@ -69,7 +69,7 @@
         </p><p>If there are any other questions feel free to ask either here or on the AUR page, linked above. I would ask here if it's a simple question, but ask at the AUR page if it's more complicated.
         </p><p>------------------------------------------------------------------------------------------------------------------------------------------------
         </p><p>I don't know if this is necessarily the right place to post this HowTo guide but it's in direct relation to the old Manjaro forum so from my understanding this counts. Please let me know, like before, if you have any questions!
-        </p><p><div class="has-background-black subtitle is-3">Archived Pamac Instructions from Reddit Comment</div>
+        </p><p><h3 class="has-text-white">Archived Pamac Instructions from Reddit Comment</h3>
         </p><p>Alright.
         </p><p>First you want to download your AnyConnect executable, then select the cisco-anyconnect package from the AUR in pamac. Then go to the "build files" section
         </p><p>From there the process is similar to using the shell, i.e.:
