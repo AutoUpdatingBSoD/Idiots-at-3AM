@@ -22,86 +22,65 @@
         <div class="hero-body">
           <div class="container">
           
-
-        <div class='biggertext heightx2'>How to install Cisco AnyConnect VPN on Arch Linux Distributions using the Tarball
-        </div><div class="heightx2">3/29/2025: This is another archive of a How-To post I made on <a href="" class="tutorials">Reddit</a>, just in case that post gets taken down too.
+        <div class="heightx1">3/29/2025: This is another archive of a How-To post I made on <a href="https://www.reddit.com/r/ManjaroLinux/comments/iax5q2/howto_install_the_official_cisco_anyconnect_vpn/">Reddit</a>, just in case that post gets taken down too.
+        <div class="heightx4"></div>
+        <div class='biggertext heightx2'>"><h1>How to install Cisco AnyConnect VPN on Arch Linux Distributions using the Tarball</h1> </div>
         </div><div class="heightx2">Hello All!
-        </div><div class="heightx2">
         </div><div class="heightx2">Before I begin, I'm posting this here since the Manjaro Forums (original place I posted this HowTo as I was using it 100% at the time) got destroyed in an update, as some of you already know. Thankfully, my thread got saved in the archive. However, in the event that another update process ruins the archive, I'm posting yet another backup HowTo guide here, since I'm a Reddit user now:
-        </div><div class="heightx2">
         </div><div class="heightx2">----------------------------------------
-        </div><div class="heightx2">
         </div><div class="heightx2">| The Actual HowTo Guide |
-        </div><div class="heightx2">
         </div><div class="heightx2">----------------------------------------
-        </div><div class="heightx2">
-        </div><div class="heightx2">I created a new how-to guide for a few reasons:
-        </div><div class="heightx2">
-        </div><div class="heightx2">    The cisco-anyconnect-tarball changes are now merged to cisco-anyconnect, making the old guide (and the old -tarball package) useless.
-        </div><div class="heightx2">
-        </div><div class="heightx2">    I have new information regarding how to add the tarball to the package installer, for both the CLI and Pamac.
-        </div><div class="heightx2">
-        </div><div class="heightx2">    I didn't get edit permissions until very soon after I made this post public.
-        </div><div class="heightx2">
-        </div><div class="heightx2">    Since I got flag/edit permissions after I made this post, I flagged the original post, and it's now been unlisted.
-        </div><div class="heightx2">
+        </div><div class="heightx2">I created a new how-to guide for a few reasons:<ul>
+        </div><div class="heightx2">    The cisco-anyconnect-tarball changes are now merged to cisco-anyconnect, making the old guide (and the old -tarball package) useless.<li></li>
+        </div><div class="heightx2">    I have new information regarding how to add the tarball to the package installer, for both the CLI and Pamac.<li></li>
+        </div><div class="heightx2">    I didn't get edit permissions until very soon after I made this post public.<li></li>
+        </div><div class="heightx2">    Since I got flag/edit permissions after I made this post, I flagged the original post, and it's now been unlisted.<li></li></ul>
         </div><div class="heightx2">For some users, there won't be an option to include a link, so I'll specify how to include the tarball locally instead.
-        </div><div class="heightx2">
         </div><div class="heightx2">With that in mind, here's the new (updated) how-to guide for the tarball:
-        </div><div class="heightx2">
         </div><div class="heightx2">CLI:
-        </div><div class="heightx2">
         </div><div class="heightx2">If yay is not installed, do:
-        </div><div class="heightx2">
-        </div><div class="heightx2">sudo pacman -S yay 
-        </div><div class="heightx2">
+        </div><div class="heightx2"><span class="markdown">sudo pacman -S yay</span>
         </div><div class="heightx2">Then, run:
-        </div><div class="heightx2">
-        </div><div class="heightx2">yay -S cisco-anyconnect 
-        </div><div class="heightx2">
+        </div><div class="heightx2"><span class="markdown">yay -S cisco-anyconnect 
         </div><div class="heightx2">This will fail, but that's ok. You want to create the cisco-anyconnect directory. This can be found in:
-        </div><div class="heightx2">
-        </div><div class="heightx2">/home/$USER/.cache/yay/cisco-anyconnect 
-        </div><div class="heightx2">
-        </div><div class="heightx2">Copy the tarball here. Then, install again, but instead edit the PKGBUILD script within the installation command:
-        </div><div class="heightx2">
-        </div><div class="heightx2">yay -S cisco-anyconnect --editmenu 
-        </div><div class="heightx2">
+        </div><div class="heightx2"><span class="markdown">/home/$USER/.cache/yay/cisco-anyconnect </span>
+        </div><div class="heightx2"><span class="markdown">yay -S cisco-anyconnect --editmenu </span>
         </div><div class="heightx2">Say None (N) to CleanBuild, None (N) to showing diffs (or All (A) if you really want to see the diffs), and All (A) to editing the PKGBUILD.
-        </div><div class="heightx2">
         </div><div class="heightx2">At the top you'll see:
-        </div><div class="heightx2">
-        </div><div class="heightx2">_source="installer" # if installing from .sh installer #_source="tarball"     # if installing from .tar.gz package 
-        </div><div class="heightx2">
+        </div><div class="heightx2"><span class="markdown">_source="installer" # if installing from .sh installer #_source="tarball"     # if installing from .tar.gz package</span>
         </div><div class="heightx2">Change it to:
-        </div><div class="heightx2">
-        </div><div class="heightx2">#_source="installer"   # if installing from .sh installer _source="tarball" # if installing from .tar.gz package 
-        </div><div class="heightx2">
+        </div><div class="heightx2">#<span class="markdown">_source="installer"   # if installing from .sh installer _source="tarball" # if installing from .tar.gz package</span> 
         </div><div class="heightx2">Scroll down and you'll see:
-        </div><div class="heightx2">
-        </div><div class="heightx2">if [[ "${_source}" == "tarball" ]]; then     _filename="anyconnect-linux64-${pkgver}-predeploy-k9.tar.gz" 
-        </div><div class="heightx2">
+        </div><div class="heightx2"><span class="markdown">if [[ "${_source}" == "tarball" ]]; then     _filename="anyconnect-linux64-${pkgver}-predeploy-k9.tar.gz" </span>
         </div><div class="heightx2">Make sure the _filename variable is the same as your tarball. Yours may not be by default because Cisco, that's why.
-        </div><div class="heightx2">
         </div><div class="heightx2">Save the PKGBUILD, close, and complete the installation process as normal.
-        </div><div class="heightx2">
         </div><div class="heightx2">Post-install
-        </div><div class="heightx2">
         </div><div class="heightx2">Finally, run the following command as root:
-        </div><div class="heightx2">
-        </div><div class="heightx2">systemctl enable --now vpnagentd 
-        </div><div class="heightx2">
+        </div><div class="heightx2"><span class="markdown">systemctl enable --now vpnagentd </span>
         </div><div class="heightx2">And that's all there is to it!
-        </div><div class="heightx2">
         </div><div class="heightx2">If anyone needs Pamac instructions I'll provide them in a separate comment. I don't think anyone will need them, but if someone really needs to do this in Pamac I know how.
-        </div><div class="heightx2">
         </div><div class="heightx2">If there are any other questions feel free to ask either here or on the AUR page, linked above. I would ask here if it's a simple question, but ask at the AUR page if it's more complicated.
-        </div><div class="heightx2">
         </div><div class="heightx2">------------------------------------------------------------------------------------------------------------------------------------------------
-        </div><div class="heightx2">
         </div><div class="heightx2">I don't know if this is necessarily the right place to post this HowTo guide but it's in direct relation to the old Manjaro forum so from my understanding this counts. Please let me know, like before, if you have any questions!
+        </div><div class="heightx2"><h3>Archived Pamac Instructions from Reddit Comment</h3>
+        </div><div class="heightx2">Alright.
+        </div><div class="heightx2">First you want to download your AnyConnect executable, then select the cisco-anyconnect package from the AUR in pamac. Then go to the "build files" section
+        </div><div class="heightx2">From there the process is similar to using the shell, i.e.:
+        </div><div class="heightx2">At the top you'll see:
+        </div><div class="heightx2"><span class="markdown">_source="installer" # if installing from .sh installer #_source="tarball"     # if installing from .tar.gz package  </span>
+        </div><div class="heightx2">Change it to:
+        </div><div class="heightx2"><span class="markdown">#_source="installer"   # if installing from .sh installer _source="tarball" # if installing from .tar.gz package  
+        </div><div class="heightx2">Scroll down and you'll see:
+        </div><div class="heightx2"><span class="markdown">if [[ "${_source}" == "tarball" ]]; then     _filename="anyconnect-linux64-${pkgver}-predeploy-k9.tar.gz"  
+        </div><div class="heightx2">Make sure the _filename variable is the same as your tarball. Yours may not be by default because Cisco, that's why.
+        </div><div class="heightx2">One last step though, you'll need to change this line:
+        </div><div class="heightx2"><span class="markdown">source=("file://${_filename}" "vpnagentd.service" "anyconnect.sh" "anyconnect.csh" "AnyConnectLocalPolicy.xml")</span>
+        </div><div class="heightx2">to match your Cisco tarball location directory. i.e.:
+        </div><div class="heightx2"><span class="markdown">source=("file:///home/$USER/Downloads/${_filename}" "vpnagentd.service" "anyconnect.sh" "anyconnect.csh" "AnyConnectLocalPolicy.xml")</span>
+        </div><div class="heightx2">(disclaimer, I don't remember if the 3 /'s after file: is supposed to be one slash, but I left that in regardless!)
+        </div><div class="heightx2">After that hit install! One thing to be mindful of is your Anyconnect version, if you're on a lower version you'll have to get one of the AUR packages and build the image from one of the downloadable image files, starting with version 4.7-00136 (the version I contributed to!)
         </div>
-        <div class="heightx3"></div>
+            <div class="heightx3"></div>
             <div>
                 DISCLAIMER! I do not own nor have I worked on the production nor distribution of Cisco Anyconnect including its tarball.
                 <br>I simply wrote the guide and was the first to figure out how to install Cisco Anyconnect via the tarball on Arch distros using an Arch Linux Package.
