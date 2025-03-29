@@ -1,1 +1,39 @@
-
+#darkModeDetect, #headertitle {
+  color: #000000;
+}
+.centeredtext{
+  text-align: center;
+}
+.biggertext{
+  font-size: 1.7em;
+  margin-left: 90px;
+}
+#list{
+  font-size:  1.5em;
+  margin-left: 90px;
+}
+.listelem{
+  display: list-item;
+  list-style-type: none;
+  text-align: left;    
+} 
+#contents {
+  display: none;
+  color: #ffffff
+}
+#homemessage{
+  max-height: 100;
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+}
+#headersubtitle{
+  text-align: center;
+  margin: 0 auto;
+}
+#searchbar{
+  padding:15px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+      
