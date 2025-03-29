@@ -16,7 +16,7 @@ function search_tutorial() {
 $(document).ready(function() {
     var csvdata = [    
         ["Edit Ada in Visual Studio: The Right Way!","RunAdaInVSCode.html"],
-        ["How to install Cisco AnyConnect VPN on Arch Linux Distributions using the Tarball","https://www.reddit.com/r/ManjaroLinux/comments/iax5q2/howto_install_the_official_cisco_anyconnect_vpn/"],
+        ["How to install Cisco AnyConnect VPN on Arch Linux Distributions using the Tarball","ciscotarball.html"],
         ["Common Cybersecurity References","antihack.html"]
         ];
         let x = document.getElementsByClassName('tutorials');
