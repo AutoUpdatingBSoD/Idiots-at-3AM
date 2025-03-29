@@ -44,7 +44,7 @@
         <div class="heightx2"></div>If yay is not installed, do:
         <div class="heightx2"></div><div class="box">sudo pacman -S yay</div>
         <div class="heightx2"></div>Then, run:
-        <div class="heightx2"></div><div class="box">yay -S cisco-anyconnect 
+        <div class="heightx2"></div><div class="box">yay -S cisco-anyconnect </div> 
         <div class="heightx2"></div>This will fail, but that's ok. You want to create the cisco-anyconnect directory. This can be found in:
         <div class="heightx2"></div><div class="box">/home/$USER/.cache/yay/cisco-anyconnect</div>
         <div class="heightx2"></div>Copy the tarball here. Then, install again, but instead edit the PKGBUILD script within the installation command:
@@ -73,7 +73,7 @@
         <div class="heightx2"></div>At the top you'll see:
         <div class="heightx2"></div><div class="box">_source="installer" # if installing from .sh installer #_source="tarball"     # if installing from .tar.gz package</div>
         <div class="heightx2"></div>Change it to:
-        <div class="heightx2"></div><div class="box">#_source="installer"   # if installing from .sh installer _source="tarball" # if installing from .tar.gz package  
+        <div class="heightx2"></div><div class="box">#_source="installer"   # if installing from .sh installer _source="tarball" # if installing from .tar.gz package  </div> 
         <div class="heightx2"></div>Scroll down and you'll see:
         <div class="heightx2"></div><div class="box">if [[ "${_source}" == "tarball" ]]; then     _filename="anyconnect-linux64-${pkgver}-predeploy-k9.tar.gz" </div> 
         <div class="heightx2"></div>Make sure the _filename variable is the same as your tarball. Yours may not be by default because Cisco, that's why.
