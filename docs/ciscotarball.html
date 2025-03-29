@@ -22,18 +22,19 @@
         <!-- Hero content: will be in the middle -->
         <div class="hero-body">
           <div class="container">
+            <div class="content is-large">
              <div class="heightx2"></div>     
         <div class="heightx1"></div>
-        3/29/2025: This is another archive of a How-To post I made on <a href="https://www.reddit.com/r/ManjaroLinux/comments/iax5q2/howto_install_the_official_cisco_anyconnect_vpn/">Reddit</a>, just in case that post gets taken down too.
-    
+        <p>3/29/2025: This is another archive of a How-To post I made on <a href="https://www.reddit.com/r/ManjaroLinux/comments/iax5q2/howto_install_the_official_cisco_anyconnect_vpn/">Reddit</a>, just in case that post gets taken down too.
+    </p>
         
-        <div class="title is-1">How to install Cisco AnyConnect VPN on Arch Linux Distributions using the Tarball</div>
-        <div class="content">
+        <h1>How to install Cisco AnyConnect VPN on Arch Linux Distributions using the Tarball</h1>
+
         <p>
         Hello All!
         Before I begin, I'm posting this here since the Manjaro Forums (original place I posted this HowTo as I was using it 100% at the time) got destroyed in an update, as some of you already know. Thankfully, my thread got saved in the archive. However, in the event that another update process ruins the archive, I'm posting yet another backup HowTo guide here, since I'm a Reddit user now:
           </p>
-        <div class="box">The Actual HowTo Guide</div>
+        <h2>The Actual HowTo Guide</h2>
         
         <p>I created a new how-to guide for a few reasons:
         </p><p><ul><li>The cisco-anyconnect-tarball changes are now merged to cisco-anyconnect, making the old guide (and the old -tarball package) useless.</li>
@@ -42,7 +43,7 @@
         </p><p><li>Since I got flag/edit permissions after I made this post, I flagged the original post, and it's now been unlisted.</li></ul>
         </p><p>For some users, there won't be an option to include a link, so I'll specify how to include the tarball locally instead.
         </p><p>With that in mind, here's the new (updated) how-to guide for the tarball:
-        </p><p><div class="subtitle is-5">CLI:</div>
+        </p><p><h5>CLI:</h5>
         </p><p>If yay is not installed, do:
         </p><p><blockquote class="has-text-success">sudo pacman -S yay</blockquote>
         </p><p>Then, run:
@@ -60,7 +61,7 @@
         </p><p><blockquote class="has-text-success">if [[ "${_source}" == "tarball" ]]; then     _filename="anyconnect-linux64-${pkgver}-predeploy-k9.tar.gz"</blockquote>
         </p><p>Make sure the _filename variable is the same as your tarball. Yours may not be by default because Cisco, that's why.
         </p><p>Save the PKGBUILD, close, and complete the installation process as normal.
-        </p><p><div class="subtitle is-5">Post-install</div>
+        </p><p><h5>Post-install</h5>
         </p><p>Finally, run the following command as root:
         </p><p><blockquote class="has-text-success">systemctl enable --now vpnagentd</blockquote>
         </p><p>And that's all there is to it!
