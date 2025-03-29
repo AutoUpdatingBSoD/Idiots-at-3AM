@@ -44,25 +44,25 @@
         </p><p>With that in mind, here's the new (updated) how-to guide for the tarball:
         </p><p><div class="subtitle is-5">CLI:</div>
         </p><p>If yay is not installed, do:
-        </p><p><div class="box has-text-success">sudo pacman -S yay</div>
+        </p><p><blockquote class="has-text-success">sudo pacman -S yay</blockquote>
         </p><p>Then, run:
-        </p><p><div class="box has-text-success has-background-black">yay -S cisco-anyconnect </div> 
+        </p><p><blockquote class="has-text-success">yay -S cisco-anyconnect</blockquote>
         </p><p>This will fail, but that's ok. You want to create the cisco-anyconnect directory. This can be found in:
-        </p><p><div class="box has-text-success has-background-black">/home/$USER/.cache/yay/cisco-anyconnect</div>
+        </p><p><blockquote class="has-text-success">/home/$USER/.cache/yay/cisco-anyconnect</blockquote>
         </p><p>Copy the tarball here. Then, install again, but instead edit the PKGBUILD script within the installation command:
-        </p><p><div class="box has-text-success has-background-black">yay -S cisco-anyconnect --editmenu</div>
+        </p><p><blockquote class="has-text-success">yay -S cisco-anyconnect --editmenu</blockquote>
         </p><p>Say None (N) to CleanBuild, None (N) to showing diffs (or All (A) if you really want to see the diffs), and All (A) to editing the PKGBUILD.
         </p><p>At the top you'll see:
-        </p><p><div class="box has-text-success has-background-black">_source="installer" # if installing from .sh installer #_source="tarball"     # if installing from .tar.gz package</div>
+        </p><p><blockquote class="has-text-success">_source="installer" # if installing from .sh installer #_source="tarball"     # if installing from .tar.gz package</blockquote>
         </p><p>Change it to:
-        </p><p><div class="box has-text-success has-background-black">#_source="installer"   # if installing from .sh installer _source="tarball" # if installing from .tar.gz package</div>
+        </p><p><blockquote class="has-text-success">#_source="installer"   # if installing from .sh installer _source="tarball" # if installing from .tar.gz package</blockquote>
         </p><p>Scroll down and you'll see:
-        </p><p><div class="box has-text-success has-background-black">if [[ "${_source}" == "tarball" ]]; then     _filename="anyconnect-linux64-${pkgver}-predeploy-k9.tar.gz"</div>
+        </p><p><blockquote class="has-text-success">if [[ "${_source}" == "tarball" ]]; then     _filename="anyconnect-linux64-${pkgver}-predeploy-k9.tar.gz"</blockquote>
         </p><p>Make sure the _filename variable is the same as your tarball. Yours may not be by default because Cisco, that's why.
         </p><p>Save the PKGBUILD, close, and complete the installation process as normal.
         </p><p><div class="subtitle is-5">Post-install</div>
         </p><p>Finally, run the following command as root:
-        </p><p><div class="box has-text-success  has-background-black">systemctl enable --now vpnagentd</div>
+        </p><p><blockquote class="has-text-success">systemctl enable --now vpnagentd</blockquote>
         </p><p>And that's all there is to it!
         </p><p>If anyone needs Pamac instructions I'll provide them in a separate comment. I don't think anyone will need them, but if someone really needs to do this in Pamac I know how.
         </p><p>If there are any other questions feel free to ask either here or on the AUR page, linked above. I would ask here if it's a simple question, but ask at the AUR page if it's more complicated.
@@ -73,16 +73,16 @@
         </p><p>First you want to download your AnyConnect executable, then select the cisco-anyconnect package from the AUR in pamac. Then go to the "build files" section
         </p><p>From there the process is similar to using the shell, i.e.:
         </p><p>At the top you'll see:
-        </p><p><div class="box has-text-success has-background-black">_source="installer" # if installing from .sh installer #_source="tarball"     # if installing from .tar.gz package</div>
+        </p><p><blockquote class="has-text-success">_source="installer" # if installing from .sh installer #_source="tarball"     # if installing from .tar.gz package</blockquote>
         </p><p>Change it to:
-        </p><p><div class="box has-text-success has-background-black">#_source="installer"   # if installing from .sh installer _source="tarball" # if installing from .tar.gz package  </div> 
+        </p><p><blockquote class="has-text-success">#_source="installer"   # if installing from .sh installer _source="tarball" # if installing from .tar.gz package</blockquote>
         </p><p>Scroll down and you'll see:
-        </p><p><div class="box has-text-success has-background-black">if [[ "${_source}" == "tarball" ]]; then     _filename="anyconnect-linux64-${pkgver}-predeploy-k9.tar.gz" </div> 
+        </p><p><blockquote class="has-text-success">if [[ "${_source}" == "tarball" ]]; then     _filename="anyconnect-linux64-${pkgver}-predeploy-k9.tar.gz"</blockquote>
         </p><p>Make sure the _filename variable is the same as your tarball. Yours may not be by default because Cisco, that's why.
         </p><p>One last step though, you'll need to change this line:
-        </p><p><div class="box has-text-success has-background-black">source=("file://${_filename}" "vpnagentd.service" "anyconnect.sh" "anyconnect.csh" "AnyConnectLocalPolicy.xml")</div>
+        </p><p><blockquote class="has-text-success">source=("file://${_filename}" "vpnagentd.service" "anyconnect.sh" "anyconnect.csh" "AnyConnectLocalPolicy.xml")</blockquote>
         </p><p>to match your Cisco tarball location directory. i.e.:
-        </p><p><div class="box has-text-success">source=("file:///home/$USER/Downloads/${_filename}" "vpnagentd.service" "anyconnect.sh" "anyconnect.csh" "AnyConnectLocalPolicy.xml")</div>
+        </p><p><blockquote class="has-text-success">source=("file:///home/$USER/Downloads/${_filename}" "vpnagentd.service" "anyconnect.sh" "anyconnect.csh" "AnyConnectLocalPolicy.xml")</blockquote>
         </p><p>(disclaimer, I don't remember if the 3 /'s after file: is supposed to be one slash, but I left that in regardless!)
         </p><p>After that hit install! One thing to be mindful of is your Anyconnect version, if you're on a lower version you'll have to get one of the AUR packages and build the image from one of the downloadable image files, starting with version 4.7-00136 (the version I contributed to!)
         </p>
