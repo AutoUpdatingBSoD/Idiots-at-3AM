@@ -1,1 +1,119 @@
 
+<!DOCTYPE html>
+  <html lang="en">
+  <!--Name: Michael Hammond;
+    File Name: ciscotarball.html;
+  -->
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Michael Hammond's Website</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <body>
+      
+      <section class="hero is-fullheight is-dark is-bold">
+      
+        <div class="heightx2"></div>
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+          <div class="container">
+          
+
+        <div class='biggertext heightx2'>How to install Cisco AnyConnect VPN on Arch Linux Distributions using the Tarball
+        </div><div class="heightx2">3/29/2025: This is another archive of a How-To post I made on <a href="" class="tutorials">Reddit</a>, just in case that post gets taken down too.
+        </div><div class="heightx2">Hello All!
+        </div><div class="heightx2">
+        </div><div class="heightx2">Before I begin, I'm posting this here since the Manjaro Forums (original place I posted this HowTo as I was using it 100% at the time) got destroyed in an update, as some of you already know. Thankfully, my thread got saved in the archive. However, in the event that another update process ruins the archive, I'm posting yet another backup HowTo guide here, since I'm a Reddit user now:
+        </div><div class="heightx2">
+        </div><div class="heightx2">----------------------------------------
+        </div><div class="heightx2">
+        </div><div class="heightx2">| The Actual HowTo Guide |
+        </div><div class="heightx2">
+        </div><div class="heightx2">----------------------------------------
+        </div><div class="heightx2">
+        </div><div class="heightx2">I created a new how-to guide for a few reasons:
+        </div><div class="heightx2">
+        </div><div class="heightx2">    The cisco-anyconnect-tarball changes are now merged to cisco-anyconnect, making the old guide (and the old -tarball package) useless.
+        </div><div class="heightx2">
+        </div><div class="heightx2">    I have new information regarding how to add the tarball to the package installer, for both the CLI and Pamac.
+        </div><div class="heightx2">
+        </div><div class="heightx2">    I didn't get edit permissions until very soon after I made this post public.
+        </div><div class="heightx2">
+        </div><div class="heightx2">    Since I got flag/edit permissions after I made this post, I flagged the original post, and it's now been unlisted.
+        </div><div class="heightx2">
+        </div><div class="heightx2">For some users, there won't be an option to include a link, so I'll specify how to include the tarball locally instead.
+        </div><div class="heightx2">
+        </div><div class="heightx2">With that in mind, here's the new (updated) how-to guide for the tarball:
+        </div><div class="heightx2">
+        </div><div class="heightx2">CLI:
+        </div><div class="heightx2">
+        </div><div class="heightx2">If yay is not installed, do:
+        </div><div class="heightx2">
+        </div><div class="heightx2">sudo pacman -S yay 
+        </div><div class="heightx2">
+        </div><div class="heightx2">Then, run:
+        </div><div class="heightx2">
+        </div><div class="heightx2">yay -S cisco-anyconnect 
+        </div><div class="heightx2">
+        </div><div class="heightx2">This will fail, but that's ok. You want to create the cisco-anyconnect directory. This can be found in:
+        </div><div class="heightx2">
+        </div><div class="heightx2">/home/$USER/.cache/yay/cisco-anyconnect 
+        </div><div class="heightx2">
+        </div><div class="heightx2">Copy the tarball here. Then, install again, but instead edit the PKGBUILD script within the installation command:
+        </div><div class="heightx2">
+        </div><div class="heightx2">yay -S cisco-anyconnect --editmenu 
+        </div><div class="heightx2">
+        </div><div class="heightx2">Say None (N) to CleanBuild, None (N) to showing diffs (or All (A) if you really want to see the diffs), and All (A) to editing the PKGBUILD.
+        </div><div class="heightx2">
+        </div><div class="heightx2">At the top you'll see:
+        </div><div class="heightx2">
+        </div><div class="heightx2">_source="installer" # if installing from .sh installer #_source="tarball"     # if installing from .tar.gz package 
+        </div><div class="heightx2">
+        </div><div class="heightx2">Change it to:
+        </div><div class="heightx2">
+        </div><div class="heightx2">#_source="installer"   # if installing from .sh installer _source="tarball" # if installing from .tar.gz package 
+        </div><div class="heightx2">
+        </div><div class="heightx2">Scroll down and you'll see:
+        </div><div class="heightx2">
+        </div><div class="heightx2">if [[ "${_source}" == "tarball" ]]; then     _filename="anyconnect-linux64-${pkgver}-predeploy-k9.tar.gz" 
+        </div><div class="heightx2">
+        </div><div class="heightx2">Make sure the _filename variable is the same as your tarball. Yours may not be by default because Cisco, that's why.
+        </div><div class="heightx2">
+        </div><div class="heightx2">Save the PKGBUILD, close, and complete the installation process as normal.
+        </div><div class="heightx2">
+        </div><div class="heightx2">Post-install
+        </div><div class="heightx2">
+        </div><div class="heightx2">Finally, run the following command as root:
+        </div><div class="heightx2">
+        </div><div class="heightx2">systemctl enable --now vpnagentd 
+        </div><div class="heightx2">
+        </div><div class="heightx2">And that's all there is to it!
+        </div><div class="heightx2">
+        </div><div class="heightx2">If anyone needs Pamac instructions I'll provide them in a separate comment. I don't think anyone will need them, but if someone really needs to do this in Pamac I know how.
+        </div><div class="heightx2">
+        </div><div class="heightx2">If there are any other questions feel free to ask either here or on the AUR page, linked above. I would ask here if it's a simple question, but ask at the AUR page if it's more complicated.
+        </div><div class="heightx2">
+        </div><div class="heightx2">------------------------------------------------------------------------------------------------------------------------------------------------
+        </div><div class="heightx2">
+        </div><div class="heightx2">I don't know if this is necessarily the right place to post this HowTo guide but it's in direct relation to the old Manjaro forum so from my understanding this counts. Please let me know, like before, if you have any questions!
+        </div>
+        <div class="heightx3"></div>
+            <div>
+                DISCLAIMER! I do not own nor have I worked on the production nor distribution of Cisco Anyconnect including its tarball.
+                <br>I simply wrote the guide and was the first to figure out how to install Cisco Anyconnect via the tarball on Arch distros using an Arch Linux Package.
+                <br>I feel this guide is at least a little helpful to see especially at 3AM when you might not have much time to work on such a thing.
+            </div>
+          </div>
+        </div>
+      </section>
+        </body>
+
+        <script>
+          $("#contents").fadeIn("3000");
+        
+        </script>
+</html>
