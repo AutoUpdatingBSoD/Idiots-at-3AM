@@ -28,24 +28,23 @@
                 <div class='heightx4'></div>  
 
 
-                <div class="heightx2">First, some assumptions have to be made:",              </div>
+                <div class="heightx2"></div>First, some assumptions have to be made:",              
               <div class="heightx2"></div>
               <div class="box">You have Visual Studio Code installed (duh)</div>
               <div class="box">You have GNAT, the Closed-Source Ada implementation, installed on your computer</div>
               <div class="box">The gnatmake binary is linked to your OS's PATH variables.</div>
               <div class="box">You really hate all of the current Ada options, and want something more mainstream and recent to use for your Ada code without sacrificing features such as code snippets.</div>
-              <div class="heightx2"></div>
-              <div class="heightx2">To begin, start up Visual Studio, go to the extensions page (on the Left bar) The Extensions tab can be reached from the button containing the icon with four blocks and the top-right corner is seperated from what would be a complete cube.</div>
-              </div><div class="heightx2">Install the plugins named 'Ada' and 'Ada-snippets', both by the user Entomy.
-              </div><div class="heightx2">Once those are installed, reload Visual Studio Code, load an Ada file, and you should see that your Code has syntax highlighting.
-              </div><div class="heightx2">Next, we want to install from the extensions page an extension called 'code-runner', but we're going to modify it. Once installed, reload Visual Studio Code and disable the plugin.
-              </div><div class="heightx2">We want to modify the extension's package.json file, which has the file extensions to use. We want to do this because Ada is not officially supported in this plugin.
-              </div><div class="heightx2">User extension paths for Visual Studio Code can be found <a href='https://code.visualstudio.com/docs/editor/extension-gallery'>at the bottom of this link</a>.
-              </div><div class="heightx2">Inside the extension path is all of the extensions you have installed. Inside the extension with code-runner in its name (you have to find it, sorry) is the package.json we want to modify. Open it in Visual Studio Code (or any editor, just remember to save).
-              </div><div class="heightx2">Find the line: ' \"code-runner.executorMapByFileExtension\": '  Inside this part of the JSON file are compilations by file extension. Go to the bottom of this section, find the last extension in this listing, only add one comma at the end of the last double quote mark, and hit enter.
-              </div><div class="heightx2">Now add the following code at the new line you just created: <span class="heightx2"></span> <div class="box ">\".adb\": \"cd $dir && gnatmake $fileName && $dir$fileNameWithoutExt\"</div>
-              </div><div class="heightx2">Now reload VS Code and re-enable the extension. You'll also very likely want to turn on the checkbox for 'Run in Terminal' in the code-runner settings.
-              </div><div class="heightx2">And that's it! Keep in mind that you'll have to compile the root .adb file of your project for some Ada functionality to work."s HowTo guide but it's in direct relation to the old Manjaro forum so from my understanding this counts. Please let me know, like before, if you have any questions!
+              <div class="heightx2"></div>To begin, start up Visual Studio, go to the extensions page (on the Left bar) The Extensions tab can be reached from the button containing the icon with four blocks and the top-right corner is seperated from what would be a complete cube.
+              <div class="heightx2"></div>Install the plugins named 'Ada' and 'Ada-snippets', both by the user Entomy.
+              <div class="heightx2"></div>Once those are installed, reload Visual Studio Code, load an Ada file, and you should see that your Code has syntax highlighting.
+              <div class="heightx2"></div>Next, we want to install from the extensions page an extension called 'code-runner', but we're going to modify it. Once installed, reload Visual Studio Code and disable the plugin.
+              <div class="heightx2"></div>We want to modify the extension's package.json file, which has the file extensions to use. We want to do this because Ada is not officially supported in this plugin.
+              <div class="heightx2"></div>User extension paths for Visual Studio Code can be found <a href='https://code.visualstudio.com/docs/editor/extension-gallery'>at the bottom of this link</a>.
+              <div class="heightx2"></div>Inside the extension path is all of the extensions you have installed. Inside the extension with code-runner in its name (you have to find it, sorry) is the package.json we want to modify. Open it in Visual Studio Code (or any editor, just remember to save).
+              <div class="heightx2"></div>Find the line: ' \"code-runner.executorMapByFileExtension\": '  Inside this part of the JSON file are compilations by file extension. Go to the bottom of this section, find the last extension in this listing, only add one comma at the end of the last double quote mark, and hit enter.
+              <div class="heightx2"></div>Now add the following code at the new line you just created: <div class="heightx2"></div> <div class="box ">\".adb\": \"cd $dir && gnatmake $fileName && $dir$fileNameWithoutExt\"</div>
+              <div class="heightx2"></div>Now reload VS Code and re-enable the extension. You'll also very likely want to turn on the checkbox for 'Run in Terminal' in the code-runner settings.
+              <div class="heightx2"></div>And that's it! Keep in mind that you'll have to compile the root .adb file of your project for some Ada functionality to work."s HowTo guide but it's in direct relation to the old Manjaro forum so from my understanding this counts. Please let me know, like before, if you have any questions!
   
               <div id="searchBarDiv"></div>
               <a href="https://autoupdatingbsod.github.io/" class="button is-link centered">About the Author</a>
