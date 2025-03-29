@@ -3,62 +3,46 @@
 <head>
 
 <meta charset="utf-8"/>
-<!--Name: Michael Hammond;
-  File Name: Portfolio.html;
--->
-<style>
-.answer
-{
-    display: none;
-}
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
-<div id = "rules">
+  <!--Name: Michael Hammond;
+  File Name: RunAdaInVSCode.html;
+  -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Michael Hammond's Website</title>
+      
+      <body>
+        
+        <section class="hero is-fullheight is-dark is-bold">
+        
+          <br>
+          <br>
+          <!-- Hero content: will be in the middle -->
+          <div class="hero-body">
+            <div class="container">
+            
+  
+              <div class='biggertext'><h1>How To Edit Ada Code in Visual Studio Code: The Right Way!</h1></div>  
+  
 
-    </div>
-<p id = "Text" ></p>
-<body>
-<script>
-
- 
-    var allTextLines = 
-[
-    "<h1>How To Edit Ada Code in Visual Studio Code: The Right Way!</h1>",
-    "First, some assumptions have to be made:",
-    "<ul><li>You have Visual Studio Code installed (duh)</li><li>You have GNAT, the Closed-Source Ada implementation, installed on your computer</li><li>The gnatmake binary is linked to your OS's PATH variables.</li><li>You really hate all of the current Ada options, and want something more mainstream and recent to use for your Ada code without sacrificing features such as code snippets.</li><ul>",
-    "To begin, start up Visual Studio, go to the extensions page (on the Left bar) The Extensions tab can be reached from the button containing the icon with four blocks and the top-right corner is seperated from what would be a complete cube.",
-    "Install the plugins named 'Ada' and 'Ada-snippets', both by the user Entomy",
-    "Once those are installed, reload Visual Studio Code, load an Ada file, and you should see that your Code has syntax highlighting.",
-    "Next, we want to install from the extensions page an extension called 'code-runner', but we're going to modify it. Once installed, reload Visual Studio Code and disable the plugin.",
-    "We want to modify the extension's package.json file, which has the file extensions to use. We want to do this because Ada is not officially supported in this plugin.",
-    "User extension paths for Visual Studio Code can be found <a href='https://code.visualstudio.com/docs/editor/extension-gallery'>at the bottom of this link</a>.",
-    "Inside the extension path is all of the extensions you have installed. Inside the extension with code-runner in its name (you have to find it, sorry) is the package.json we want to modify. Open it in Visual Studio Code (or any editor, just remember to save).",
-    "Find the line: ' \"code-runner.executorMapByFileExtension\": '  Inside this part of the JSON file are compilations by file extension. Go to the bottom of this section, find the last extension in this listing, only add one comma at the end of the last double quote mark, and hit enter.",
-    "Now add the following code at the new line you just created: <br><br> \".adb\": \"cd $dir && gnatmake $fileName && $dir$fileNameWithoutExt\"",
-    "Now reload VS Code and re-enable the extension. You'll also very likely want to turn on the checkbox for 'Run in Terminal' in the code-runner settings.", 
-    "And that's it! Keep in mind that you'll have to compile the root .adb file of your project for some Ada functionality to work."
-];
-var lines = [];
-$(document).ready(function() {
-    parseDataIntoHTML();
-});
-function parseDataIntoHTML()
-{
-    var headers = allTextLines;
-    var toInnerHTML = "";
-    for (var i=0; i<allTextLines.length; i++) {
-        var line = allTextLines[i];
-        toInnerHTML = toInnerHTML.concat("<div class='Contents' id='Contents'>".concat(line).concat("</div><br>"));
-    }
-    //alert(toInnerHTML);
-    document.getElementById("Text").innerHTML = toInnerHTML;
-}
-function printArticle()
-{
-    window.print();
-}
-</script>
-<button onclick="printArticle()">Print Article</button>            
-</body>
-</html> 
+              <div class="height2x">First, some assumptions have to be made:",</div>
+              <div class="height2x"><ul><li>You have Visual Studio Code installed (duh)</li><li>You have GNAT, the Closed-Source Ada implementation, installed on your computer</li><li>The gnatmake binary is linked to your OS's PATH variables.</li><li>You really hate all of the current Ada options, and want something more mainstream and recent to use for your Ada code without sacrificing features such as code snippets.</li><ul></div>
+              <div class="height2x">To begin, start up Visual Studio, go to the extensions page (on the Left bar) The Extensions tab can be reached from the button containing the icon with four blocks and the top-right corner is seperated from what would be a complete cube.</div>
+              <div class="height2x">Install the plugins named 'Ada' and 'Ada-snippets', both by the user Entomy.</div>
+              <div class="height2x">Once those are installed, reload Visual Studio Code, load an Ada file, and you should see that your Code has syntax highlighting.</div>
+              <div class="height2x">Next, we want to install from the extensions page an extension called 'code-runner', but we're going to modify it. Once installed, reload Visual Studio Code and disable the plugin.</div>
+              <div class="height2x">We want to modify the extension's package.json file, which has the file extensions to use. We want to do this because Ada is not officially supported in this plugin.</div>
+              <div class="height2x">User extension paths for Visual Studio Code can be found <a href='https://code.visualstudio.com/docs/editor/extension-gallery'>at the bottom of this link</a>.</div>
+              <div class="height2x">Inside the extension path is all of the extensions you have installed. Inside the extension with code-runner in its name (you have to find it, sorry) is the package.json we want to modify. Open it in Visual Studio Code (or any editor, just remember to save).</div>
+              <div class="height2x">Find the line: ' \"code-runner.executorMapByFileExtension\": '  Inside this part of the JSON file are compilations by file extension. Go to the bottom of this section, find the last extension in this listing, only add one comma at the end of the last double quote mark, and hit enter.</div>
+              <div class="height2x">Now add the following code at the new line you just created: <div class="heightx2"></div> <span class="markdown">\".adb\": \"cd $dir && gnatmake $fileName && $dir$fileNameWithoutExt\"</span></div>
+              <div class="height2x">Now reload VS Code and re-enable the extension. You'll also very likely want to turn on the checkbox for 'Run in Terminal' in the code-runner settings.</div>
+              <div class="height2x">And that's it! Keep in mind that you'll have to compile the root .adb file of your project for some Ada functionality to work."s HowTo guide but it's in direct relation to the old Manjaro forum so from my understanding this counts. Please let me know, like before, if you have any questions!</div>
+          
+              <div class="heightx3"></div>
+              <div id="searchBarDiv"></div>
+              <a href="https://autoupdatingbsod.github.io/" class="button is-link centered">About the Author</a>
+            </div>
+          </div>
+        </section>
+          </body>
+  </html>
