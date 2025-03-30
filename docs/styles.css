@@ -56,13 +56,3 @@
     text-align: center;
     margin: 0 auto;
 }
-@media screen and (max-width: 555px) {
-  html{
-    width: 200%;
-  }
-}
-@media screen and (min-width: 556px) {
-  html{
-    width: 100%;
-  }
-}
