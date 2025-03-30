@@ -57,13 +57,12 @@
     margin: 0 auto;
 }
 @media screen and (max-width: 555px) {
-  body{
+  html{
     width: 50%;
   }
-  ,
 }
-@media screen and (max-width: 555px) {
-  body{
-    width: 50%;
+@media screen and (min-width: 556px) {
+  html{
+    width: 100%;
   }
 }
