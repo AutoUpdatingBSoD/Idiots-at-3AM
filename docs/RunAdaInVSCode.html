@@ -39,7 +39,7 @@
               </p><p>User extension paths for Visual Studio Code can be found <a href='https://code.visualstudio.com/docs/editor/extension-gallery' class="has-text-link">at the bottom of this link</a>.
               </p><p>Inside the extension path is all of the extensions you have installed. Inside the extension with code-runner in its name (you have to find it, sorry) is the package.json we want to modify. Open it in Visual Studio Code (or any editor, just remember to save).
               </p><p>Find the line:
-              </p><blockquote class="has-text-success has-background-black"><div class="is-half">'\"code-runner.executorMapByFileExtension\": '</div></blockquote>
+              </p><blockquote class="has-text-success has-background-black m-0">'\"code-runner.executorMapByFileExtension\": '</blockquote>
               <p>Inside this part of the JSON file are compilations by file extension. Go to the bottom of this section, find the last extension in this listing, only add one comma at the end of the last double quote mark, and hit enter.
               </p><p>Now add the following code at the new line you just created:
               </p>
