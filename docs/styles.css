@@ -58,7 +58,7 @@
 }
 @media screen and (max-width: 555px) {
   html{
-    width: 50%;
+    width: 25%;
   }
 }
 @media screen and (min-width: 556px) {
