@@ -18,7 +18,8 @@ input[type=text]:focus {
 
  #list{
    font-size:  1.5em;
-     width: 10%;
+     width: 100%;
+     margin-left: 90px;
 }
 
 .tutorials{
@@ -34,7 +35,7 @@ input[type=text]:focus {
         width: 100%;
     }
      #list{
-     width: 95%;
+
 }
 }
 @media only screen and (max-width: 900px){
@@ -45,6 +46,6 @@ input[type=text]:focus {
         width: 70%;
     }
          #list{
-     width: 65%;
+     margin-left: 45px;
 }
 }
