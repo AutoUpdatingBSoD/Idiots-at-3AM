@@ -26,3 +26,13 @@ input[type=text]:focus {
   list-style-type: none;
   text-align: left;    
  } 
+@media only screen and (max-width: 600px){
+  input[type=text]{
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 900px){
+  input[type=text]{
+    width: 65%;
+  }
+}
