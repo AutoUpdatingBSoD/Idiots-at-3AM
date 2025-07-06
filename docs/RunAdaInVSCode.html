@@ -39,11 +39,11 @@
               </p><p>User extension paths for Visual Studio Code can be found <a href='https://code.visualstudio.com/docs/editor/extension-gallery' class="has-text-link">at the bottom of this link</a>.
               </p><p>Inside the extension path is all of the extensions you have installed. Inside the extension with code-runner in its name (you have to find it, sorry) is the package.json we want to modify. Open it in Visual Studio Code (or any editor, just remember to save).
               </p><p>Find the line:
-              </p><div class="is-mobile"><blockquote class="has-text-success has-background-black m-0">'\"code-runner.executorMapByFileExtension\": '</blockquote></div>
+              </p><<blockquote class="has-text-success has-background-black dynamictextresolution">'\"code-runner.executorMapByFileExtension\": '</blockquote>
               <p>Inside this part of the JSON file are compilations by file extension. Go to the bottom of this section, find the last extension in this listing, only add one comma at the end of the last double quote mark, and hit enter.
               </p><p>Now add the following code at the new line you just created:
               </p>
-                <blockquote class="has-text-success has-background-black">\".adb\": \"cd $dir && gnatmake $fileName && $dir$fileNameWithoutExt\"</blockquote>
+                <blockquote class="has-text-success has-background-black dynamictextresolution">\".adb\": \"cd $dir && gnatmake $fileName && $dir$fileNameWithoutExt\"</blockquote>
                 <p>Now reload VS Code and re-enable the extension. You'll also very likely want to turn on the checkbox for 'Run in Terminal' in the code-runner settings.
               </p><p>And that's it! Keep in mind that you'll have to compile the root .adb file of your project for some Ada functionality to work.
   </p>
