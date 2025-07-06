@@ -49,10 +49,23 @@
 .heightx4{
   height: 120px;
 }
+.dynamictextresolution{
+  font-size: 14px;
+}
 .centered
 {
     width: 200px;
     height: 50px;
     text-align: center;
     margin: 0 auto;
+}
+@media only screen and (max-width: 600px){
+  .dynamictextresolution{
+    font-size: 8px;
+  }
+}
+@media only screen and (max-width: 900px){
+  .dynamictextresolution{
+    font-size: 12px;
+  }
 }
